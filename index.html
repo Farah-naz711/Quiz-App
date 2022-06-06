@@ -28,10 +28,10 @@
 </section>
 </div>
 
-<section id="QuizBox" class="w-75 p-4">
+<section id="QuizBox" class="p-4">
     <div>
         <h5  id="htmlQues" class="text-white">Q1</h5></div>
-    <div class="d-flex justify-content-between text-white my-2">
+    <div class="d-flex justify-content-between text-white my-3 font-weight-bold font-italic">
         <div>Score : <span id="showScore">0</span></div>
          <span id="counter">counter</span></div>
     <div id="">
@@ -53,17 +53,17 @@
                     <label for="answer4" id="option4" onclick="checkAns(this)">option4</label>
                 </li>
         </ul>
-        <div class="d-flex  justify-content-between text-white">
+        <div class="d-flex  justify-content-between text-white  align-items-center">
             <span id="counterValue">1/5</span>
             <p id="questionResult"></p>
-            <button  id="nextQuestionBtn" class="btn" onclick="showNextQues()">Next Question</button>
+            <button  id="nextQuestionBtn"  onclick="showNextQues()">Next Question</button>
         </div>
     </div> 
 </section> 
 
 
 <section  id="result">
-<div class="d-flex justify-content-center align-items-center  p-4">
+<div class="d-flex justify-content-center align-items-center h-100 p-4">
 
     <h3>You Got <span id="total-marks"> </span></h3>
 </div>

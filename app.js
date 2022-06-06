@@ -81,11 +81,7 @@ var quizQuestion = [
 
 ]
 
-
-
-
-
-var counter = 0 , score = 0;
+var counter = 0 , score = 0, quesNum = 1;
 var boxHide = document.getElementById('boxHide');
 var quizBox = document.getElementById('QuizBox');
 var htmlQues = document.getElementById('htmlQues');
@@ -100,25 +96,20 @@ var counterValue = document.getElementById('counterValue');
 var questionResult = document.getElementById('questionResult');
 var result = document.getElementById('result');
 var totalMarks = document.getElementById('total-marks');
+var liCollection = document.getElementsByTagName('li');
+
 
 function setQuiz(){
 
     
     boxHide.style.display = 'none';
     quizBox.style.display = 'block';
-        htmlQues.innerHTML = quizQuestion[counter].question;
-
+        htmlQues.innerHTML = "Q"+ quesNum +" "+quizQuestion[counter].question;
+        quesNum++;
         option1.innerHTML = quizQuestion[counter].options.a;
         option2.innerHTML = quizQuestion[counter].options.b;
         option3.innerHTML = quizQuestion[counter].options.c;
         option4.innerHTML = quizQuestion[counter].options.d;
-       
-
-
-
-   
-
-
 
 }
 
@@ -130,31 +121,42 @@ function checkAns(e)
     questionResult.style.display = 'block'
 
 
+    for(var i = 0; i< liCollection.length; i++)
+    {
+
+        liCollection[i].setAttribute('class','disabled')
+        console.log(liCollection[i])
+    }
 
     if(e.innerHTML ==  quizQuestion[counter].answer)
     {
         score += 10;
 
-        questionResult.innerHTML = 'CORRECT'
+        questionResult.innerHTML = 'CORRECT';
+        questionResult.style.color = 'green';
         showScore.innerHTML = score;
     }
     else{
 
 
-        questionResult.innerHTML = 'WRONG ' +' (Correct is '+quizQuestion[counter].answer+')';
+        questionResult.innerHTML = 'WRONG ' +' (Correct is "'+quizQuestion[counter].answer+'")';
+        questionResult.style.color = 'red';
 
-            }
-var input = document.getElementsByTagName('input').disabled = true;
-console.log(input)
-            for(var i=0;i<input.length ; i++)
-            {
-                // console.log(input[i])
-                // input.disabled = true
             }
         
 }
 
 function showNextQues(){
+
+
+
+    for(var i = 0; i< liCollection.length; i++)
+    {
+
+        liCollection[i].classList.remove('disabled');
+                console.log(liCollection[i])
+    }
+
 
 
      for(var i = 0 ; i<answer.length; i++)
