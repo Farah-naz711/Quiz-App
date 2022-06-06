@@ -5,11 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
 </head>
 <body>
     
-    <h1>Quiz App</h1>
+<div id="boxHide" >
+
+<section class=" p-4 d-flex justify-content-center align-items-center flex-column start-Quiz-box animate__animated animate__slideInUp w-100" >
+    
+    
+    <h1 class="my-2">Start The Quiz</h1>
+    <h5  class="my-3">Good Luck</h5>
+    <button class="btn my-2" onclick="setQuiz()">Start The Javascript Quiz &gt;
+    </button>
+
+</section>
+</div>
+
+<section id="QuizBox" class="w-75 p-4">
+    <div>
+        <h5  id="htmlQues" class="text-white">Q1</h5></div>
+    <div class="d-flex justify-content-between text-white my-2">
+        <div>Score : <span id="showScore">0</span></div>
+         <span id="counter">counter</span></div>
+    <div id="">
+        <ul >
+            <li >              
+                 <input type="radio" name="answer" id="answer1" class="">
+                 <label for="answer1"   id="option1" onclick="checkAns(this)"> option1</label></li>
+                <li>
+                <input type="radio" name="answer"  id="answer2" class="">
+                <label for="answer2" id="option2" onclick="checkAns(this)">option2</label>
+                </li>
+
+                <li>
+                <input type="radio" name="answer"  id="answer3" class="" > 
+                <label for="answer3" id="option3" onclick="checkAns(this)">option3</label></li>
+
+                <li>
+                    <input type="radio" name="answer"  id="answer4" class="">
+                    <label for="answer4" id="option4" onclick="checkAns(this)">option4</label>
+                </li>
+        </ul>
+        <div class="d-flex  justify-content-between text-white">
+            <span id="counterValue">1/5</span>
+            <p id="questionResult"></p>
+            <button  id="nextQuestionBtn" class="btn" onclick="showNextQues()">Next Question</button>
+        </div>
+    </div> 
+</section> 
+
+
+<section  id="result">
+<div class="d-flex justify-content-center align-items-center  p-4">
+
+    <h3>You Got <span id="total-marks"> </span></h3>
+</div>
+
+</section>
+
+
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 <script src="app.js"></script>
 </html>
