@@ -97,6 +97,8 @@ var questionResult = document.getElementById('questionResult');
 var result = document.getElementById('result');
 var totalMarks = document.getElementById('total-marks');
 var liCollection = document.getElementsByTagName('li');
+var grade = document.getElementById('grade');
+
 
 
 function setQuiz(){
@@ -116,8 +118,8 @@ function setQuiz(){
 function checkAns(e)
 {
     nextQuestionBtn.style.display = 'block'
-    console.log(e)
-    console.log(quizQuestion[counter].answer)
+    // console.log(e)
+    // console.log(quizQuestion[counter].answer)
     questionResult.style.display = 'block'
 
 
@@ -125,7 +127,7 @@ function checkAns(e)
     {
 
         liCollection[i].setAttribute('class','disabled')
-        console.log(liCollection[i])
+        // console.log(liCollection[i])
     }
 
     if(e.innerHTML ==  quizQuestion[counter].answer)
@@ -154,7 +156,7 @@ function showNextQues(){
     {
 
         liCollection[i].classList.remove('disabled');
-                console.log(liCollection[i])
+                // console.log(liCollection[i])
     }
 
 
@@ -188,7 +190,36 @@ function showNextQues(){
     }
     
     
+var percentage = (score/50)*100;
+if(percentage >= 80 && percentage <=100)
+{
+    grade.innerHTML = 'Congrats Your Grade is  A+';
+}
+else if(percentage >= 70 && percentage <=80)
+{
 
+    grade.innerHTML = 'Congrats Your Grade is  A';
+
+}
+
+else if(percentage >= 60 && percentage <=70)
+{
+
+    grade.innerHTML = 'Your Grade is  B';
+
+}
+
+else if(percentage >= 50 && percentage <=60)
+{
+
+    grade.innerHTML = ' Your Grade is  C';
+
+}
+else {
+    grade.innerHTML = ' Your Grade is  F';
+
+}
+console.log(percentage)
 
 
 }

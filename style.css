@@ -100,13 +100,20 @@ font-weight: bold;
 
     font-weight: bold;
 }
-#result{
+#result {
     display: none;
-    width: 65%;
+    width: 60%;
     color: white;
-    background-color: gray;
+    /* background-color: gray; */
+    background-color: #002147;
+    height: 360px;
+
+
 }
 .disabled{
 
     pointer-events:  none;
+}
+#result div{
+    height: 350px;
 }
